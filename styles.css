@@ -1,0 +1,206 @@
+
+body {
+    font-family: 'Futura', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    border: #d0e7ff;
+}
+
+header {
+    background-color: #1260b5;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+header h2{
+    background-color: #1260b5;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight:lighter;
+}
+
+h3{
+    background-color: #1260b5;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight:bold;
+}
+h4{
+    color: rgb(62, 73, 104);
+    text-align: center;
+    font-size: 15px;
+    font-weight:bold;
+}
+p{
+    color: #1260b5;
+    text-align: center;
+    font-size: 15px;
+    font-weight:lighter;
+}
+
+section {
+    margin: 40px auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+h2 {
+    text-align: center;
+    color:  #1260b5;
+}
+
+canvas {
+    width: 100% !important;
+    max-height: 400px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #d0e7ff;
+    color: rgb(255, 255, 255);
+}
+
+.treemap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.box {
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 5%;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+#tooltip {
+    position: absolute;
+    background: #222;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+}
+#units-sold {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+}
+#sales-section {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#sales-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#dosage-section {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+}
+
+#dosage-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    font-family: 'Futura', sans-serif;
+    text-align: center;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.circle {
+    width: 100px;
+    height: 1000px;
+    background-color: #3498db;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.circle:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: 250px;
+    text-align: left;
+    font-size: 14px;
+    z-index: 100;
+}
+
+.tooltip strong {
+    color: #d9534f;
+}
+
+.tooltip p {
+    margin: 5px 0;
+}
+

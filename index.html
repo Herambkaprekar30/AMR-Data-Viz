@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antibiotic Data Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>AMR : The Silent Pandemic</h1>
+    </header>
+
+    <header>
+        <h3>What is AMR ?</h3> 
+        <h2>Antimicrobial resistance (AMR) is when microorganisms like bacteria, viruses, and fungi no longer respond to medicines used to treat infections. This makes infections harder to treat and increases the risk of spreading disease. Human activity, such as misusing or overusing antimicrobials, accelerates the emergence and spread of AMR.  </h2>
+    </header>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Antibiotic Dosage Chart</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="chart-container">
+            <div class="chart-card">
+                <h2>Antibiotic Dosage (mg)</h2>
+                <p>In India, antibiotic misuse is widespread due to easy over-the-counter access, self-medication, and incomplete courses. Many take incorrect dosages or use antibiotics for viral infections, leading to growing resistance. This improper use reduces effectiveness, making infections harder to treat over time.</p>
+                <canvas id="dosageChart"></canvas>
+            </div>
+        </div>
+    
+        <script>
+            const ctx = document.getElementById('dosageChart').getContext('2d');
+            const dosageChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        "Vancomycin", "Meropenem", "Trimethoprim + Sulfamethoxazole", 
+                        "Linezolid", "Ciprofloxacin + Tinidazole", "Azithromycin", 
+                        "Amoxicillin + Clavulanic Acid", "Cefixime + Ofloxacin", "Doxycycline"
+                    ],
+                    datasets: [
+                        {
+                            label: "Lowest mg",
+                            backgroundColor: "#37B3FF",
+                            data: [500, 500, 400, 400, 300, 250, 375, 200, 100]
+                        },
+                        {
+                            label: "Highest mg",
+                            backgroundColor: "#FF7F7F",
+                            data: [2500, 1500, 1200, 800, 900, 500, 1200, 450, 200]
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return `${context.dataset.label}: ${context.raw} mg`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 2500,
+                            ticks: {
+                                color: "#333",
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: "#333",
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+
+    <section id="resistance-developed">
+        <h2>Resistance Developed</h2>
+        <p>Hover for Brands and Side Effects</p>
+        <div class="treemap">
+            <div class="box" style="background-color:#2F4B7C" data-year="Amoxil, Mox, Novamox | Side effects: Nausea, diarrhea, mild rash anaphylaxis, liver damage">Amoxicillin: 2 years</div>
+            <div class="box" style="background-color:#FF7043" data-year="Ciplox, Cifran | Side effects: Dizziness, nausea, mild rash, nerve damage">Ciprofloxacin: 2 years</div>
+            <div class="box" style="background-color:#1B5E20" data-year="Septran, Bactrim | Side effects: Rash, nausea, diarrhea, kidney damage">Trimethoprim-Sulfamethoxazole: 2 years</div>
+            <div class="box" style="background-color:#0288D1" data-year="Linospan, Zyvox | Side effects: Nausea, headache	Blood disorders (low platelet count), nerve damage, serotonin syndrome">Linezolid: 2 years</div>
+            <div class="box" style="background-color:#4CAF50" data-year="Taxim-O, Cefix | Side effects: Stomach upset, diarrhea">Cefixime: 3 years</div>
+            <div class="box" style="background-color:#003F5C" data-year="Azithral, Zithromax | Side effects: Stomach pain, nausea, Irregular heartbeat, liver toxicity">Azithromycin: 3 years</div>
+            <div class="box" style="background-color:#A35F22" data-year="Doxicip, Doxy-1 | Side effects: Sun sensitivity, stomach upset, Severe liver damage, esophageal ulcers">Doxycycline: 3 Years</div>
+            <div class="box" style="background-color:#9C27B0" data-year="Meronem, Meromac | Side effects: Headache, nausea, Seizures">Meropenem:4 years</div>
+        </div>
+        <div id="tooltip"></div>
+    </section>
+    <section id="sales-section">
+        <h2>Estimated Units Sold Per Year in Million (India)</h2>
+        <p>India has witnessed a sharp rise in antibiotic sales, driven by increasing infections, easy availability, and self-medication. Commonly used antibiotics like azithromycin and amoxicillin are widely purchased, often without prescriptions. While antibiotics are essential in treating bacterial infections, their misuse—such as incomplete courses, overuse for viral illnesses, and indiscriminate self-medication—has led to a surge in antimicrobial resistance (AMR). Experts warn that this trend could render many life-saving drugs ineffective in the future, posing a severe public health challenge.</p>
+        <canvas id="salesChart"></canvas>
+    </section>
+
+    
+
+    
+    <section id="tablet-colors">
+        <h2>In 2019 alone, antibiotic-resistant illnesses are thought to have directly killed about 300,000 people in India, including newborns.</h2>
+        <h2>Antimicrobial resistance is expected to cause 2 million deaths in India alone by 2050.</h2>
+        <h4>https://www.orfonline.org/english/expert-speak/antibiotic-resistance-in-india</h4>
+        <div id="colorDisplay"></div>
+    </section>
+
+    <section id="tablet-colors">
+        <h2>"Use with caution, not in vain—
+            Or these medicines won’t work again!"</h2>
+        <div id="colorDisplay"></div>
+    </section>
+    <footer>
+        <p>© 2025 Antibiotic Data Visualization by Heramb Kaprekar</p>
+    </footer>
+</body>
+</html>
+
+
